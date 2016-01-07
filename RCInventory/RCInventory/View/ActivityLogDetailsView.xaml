@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.ActivityLogDetailsView">
+
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" >
+        <StackLayout Orientation="Horizontal">
+          <Button x:Name="btnCancelSC" Text="Cancel" />
+          <Button x:Name="btnSaveSC" Text="Save" />
+          <Button x:Name="btnDeleteSC" Text="Delete" />
+        </StackLayout>
+        <Label Text="Activity Type" />
+        <Entry x:Name="entryActivityType" Text="{Binding ActivityType, Mode=TwoWay}" />
+        <Label Text="Model" />
+        <Entry x:Name="entryModelName" Text="{Binding ModelName, Mode=TwoWay}" />
+        <Label Text="Date / Time" />
+        <StackLayout Orientation="Horizontal" Spacing="5">
+          <DatePicker x:Name="PickerLogDate"/>
+          <TimePicker x:Name="PickerLogTime"/>
+        </StackLayout>
+        <Label x:Name="lblDuration" Text="Duration" />
+        <StackLayout Orientation="Horizontal" Spacing="5">
+          <Entry x:Name="EntryMinutes" Placeholder="MM" Keyboard="Numeric"/>
+          <Label x:Name="lblTimeColon" Text=":" />
+          <Entry x:Name="EntrySeconds" Placeholder="SS" Keyboard="Numeric"/>
+        </StackLayout>
+        <Label x:Name="lblBattery1" Text="Battery 1" />
+        <Entry x:Name="entryBattery1Name" Text="{Binding Battery1Name, Mode=TwoWay}" />
+        <Label x:Name="lblBattery2" Text="Battery 2" />
+        <Entry x:Name="entryBattery2Name" Text="{Binding Battery2Name, Mode=TwoWay}" />
+        <Label Text="Location" />
+        <Entry Text="{Binding Location, Mode=TwoWay}" />
+        <Label Text="LogNotes" />
+        <Editor Text="{Binding LogNotes, Mode=TwoWay}" />
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+  
+</ContentPage>

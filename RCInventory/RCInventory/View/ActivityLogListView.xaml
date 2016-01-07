@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.ActivityLogListView">
+
+  <StackLayout>
+    <Label x:Name="lblNoOfItems" Text="No. of Activities: 999"/>
+    <ListView x:Name="ListViewActivityLog"  ItemsSource="{Binding ActivityLogsLV}" ItemSelected="OnSelect"  >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal" Spacing="5">
+                <Label Text="{Binding ActivityType}" FontSize="Micro" />
+                <Label Text="{Binding ModelName}" TextColor="#f35e20" />
+                <Label Text="{Binding LogDateTime, StringFormat='{0:yyyy-MM-dd hh\\:mm}'}" />
+                <Label Text="{Binding Location}" />
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+  
+</ContentPage>

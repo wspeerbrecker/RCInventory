@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.RCModelListView">
+
+  <StackLayout  Orientation="Vertical">
+    <Label x:Name="lblNoOfModels" Text="No. of Models: 999"/>
+    <ListView x:Name="ListViewModel" RowHeight="75"  ItemsSource="{Binding RCModelLV}" ItemSelected="OnSelect"  >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Orientation="Vertical">
+              <StackLayout Orientation="Horizontal" Spacing="5">
+                <Image Aspect="AspectFill" HeightRequest="100" WidthRequest="100"
+                   Source="{Binding ItemFilename}"/>
+                <StackLayout Orientation="Vertical">
+                  <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Label Text="{Binding ItemType}"/>
+                    <Label Text="{Binding ItemName}" TextColor="#f35e20"  />
+                    <Label Text="{Binding Manufacturer}" />
+                  </StackLayout>
+                  <StackLayout Orientation="Horizontal" Spacing="5">
+                    <Label Text="No of Flights:" />
+                    <Label Text="{Binding NoOfFlights}" />
+                    <Label Text="Total Flight Time:" />
+                    <Label Text="{Binding TotalFlightTimeHHMMSS}" />
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+
+</ContentPage>

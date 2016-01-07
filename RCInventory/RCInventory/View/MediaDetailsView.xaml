@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.MediaDetailsView">
+
+  <ContentPage.Content>
+    <ScrollView>
+    <StackLayout Orientation="Vertical" Padding="10">
+      <StackLayout Orientation="Horizontal" Padding="5" HorizontalOptions="FillAndExpand">
+        <Button x:Name="btnCancelM" Text="Cancel" />
+        <Button x:Name="btnSaveM" Text="Save" />
+        <Button x:Name="btnDeleteM" Text="Delete" />
+      </StackLayout>
+      <StackLayout Orientation="Horizontal" Padding="10">
+        <Button x:Name="btnSelectPhoto" Text="Select Photo" />
+        <Button x:Name="btnTakePhoto" Text="Take Photo" />
+      </StackLayout>
+      <StackLayout Orientation="Vertical" Padding="10">
+          <Label Text="Description" />
+          <Entry x:Name="entryMediaDesc" Text="{Binding MediaDesc, Mode=TwoWay}" HorizontalOptions="FillAndExpand"/>
+          <Label Text="Date Taken" />
+          <DatePicker x:Name="DTPicker" HorizontalOptions="Start" />
+      </StackLayout>
+      <Image x:Name="imgPhoto" Source="{Binding Filename}" HeightRequest="400" WidthRequest="400"/>
+    </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+  
+</ContentPage>

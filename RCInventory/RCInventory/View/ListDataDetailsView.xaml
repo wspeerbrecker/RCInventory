@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.ListDataDetailsView">
+
+  <ContentPage.Content>
+  <ScrollView>
+    <StackLayout Orientation="Vertical" >
+      <StackLayout Orientation="Horizontal">
+        <Button x:Name="btnCancelLD" Text="Cancel" />
+        <Button x:Name="btnSaveLD" Text="Save" />
+        <Button x:Name="btnDeleteLD" Text="Delete" />
+      </StackLayout>
+      <Label Text="List Item" />
+      <Entry x:Name="entryListItem" Text="{Binding ListDesc, Mode=TwoWay}" />
+    </StackLayout>
+  </ScrollView>
+  </ContentPage.Content>
+  
+</ContentPage>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RCInventory.View.RCInventoryDetailsView">
+
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Orientation="Vertical" >
+        <StackLayout Orientation="Horizontal">
+          <Button x:Name="btnCancelSC" Text="Cancel" />
+          <Button x:Name="btnSaveSC" Text="Save" />
+          <Button x:Name="btnDeleteSC" Text="Delete" />
+        </StackLayout>
+        <Label x:Name="ItemCategory" Text="{Binding ItemCategory}" />
+        <Label x:Name="labelItemType" Text="Item Type" />
+        <Entry x:Name="entryItemType" Text="{Binding ItemType, Mode=TwoWay}" />
+        <Label Text="Name" />
+        <Entry x:Name="entryItemName" Text="{Binding ItemName, Mode=TwoWay}" />
+        <Label Text="Manufacturer" />
+        <StackLayout Orientation="Horizontal">
+          <Entry x:Name="entryManufacturer" Text="{Binding Manufacturer, Mode=TwoWay}" HorizontalOptions="FillAndExpand"/>
+          <Button x:Name="btnListManuf" Text=">" HorizontalOptions="End"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="5">
+          <Label x:Name="lblBatteryNo" Text="Battery No:" VerticalOptions="Start"/>
+          <Entry x:Name="EntryBatteryNo"  Text="{Binding ItemNumber, Mode=TwoWay}" Placeholder="00" VerticalOptions="StartAndExpand" Keyboard="Numeric"/>
+        </StackLayout>
+        <Label x:Name="lblDefaultTime" Text="Default Flight Time" />
+        <StackLayout Orientation="Horizontal" Spacing="5">
+          <Entry x:Name="EntryMinutes" Placeholder="MM" Keyboard="Numeric"/>
+          <Label x:Name="lblColon" Text=":" />
+          <Entry x:Name="EntrySeconds" Placeholder="SS" Keyboard="Numeric"/>
+        </StackLayout>
+        <Label Text="Purchase Date" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+          <DatePicker x:Name="DTPicker" HorizontalOptions="Start" />
+          <Button x:Name="btnNoOfFlights" Text="No. Of Flights"/>
+          <Label x:Name="labelNoOfFlights" Text="##" VerticalOptions="Center"/>
+        </StackLayout>
+        <Label Text="Notes" />
+        <Editor Text="{Binding Notes, Mode=TwoWay}" />
+        <StackLayout Orientation="Horizontal" Spacing="10">
+          <StackLayout Orientation="Horizontal" >
+            <StackLayout Orientation="Vertical " Spacing="10">
+              <Button x:Name="btnGallery" Text="Media Gallery"  HorizontalOptions="Start" />
+              <Label x:Name="lblNoOfItems" Text="No. of Items: ###" />
+            </StackLayout>
+            <Image x:Name="imgPhoto" Source="{Binding ItemFilename}" HeightRequest="250" WidthRequest="250"/>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+  
+</ContentPage>
